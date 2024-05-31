@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+
+        <script type="text/javascript">
+            function sprawdz(){
+                var liczba = document.getElementById("pole").value;
+                // document.write(liczba) //sprawdzenie czy pobiera podaną przez usera liczbę
+
+                // if(liczba>0) {document.getElementById("wynik").innerHTML="dodatnia";}
+                // else if (liczba<0) {document.getElementById("wynik").innerHTML="ujemna";}
+                // else if (liczba=="") {document.getElementById("wynik").innerHTML="podaj liczbę";}
+                // else if (liczba==0) {document.getElementById("wynik").innerHTML="zero";}
+                // else {document.getElementById("wynik").innerHTML="to nie jest liczba"}
+                // //kolejność ma znaczenie
+
+                if (liczba === "") {
+                    document.getElementById("wynik").innerHTML = "uzupełnij pole";
+                } else if (isNaN(liczba)) {
+                    document.getElementById("wynik").innerHTML = "to nie jest liczba";
+                } else {
+                    liczba = Number(liczba); // Konwertowanie liczby do typu Number
+                    if (liczba > 0) {
+                        document.getElementById("wynik").innerHTML = "dodatnia";
+                    } else if (liczba < 0) {
+                        document.getElementById("wynik").innerHTML = "ujemna";
+                    } else if (liczba === 0) {
+                            document.getElementById("wynik").innerHTML = "zero";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="pole"/>
+        <input type="submit" value="Sprawdź" onclick="sprawdz()"/>
+
+        <div id="wynik"></div>
+
+    </body>
+
+</html>
